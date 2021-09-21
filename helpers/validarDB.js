@@ -1,5 +1,6 @@
 const Usuario = require('../models/usuario');
 const Nivel = require('../models/nivel');
+const Nota = require('../models/notas')
 const moment = require('moment');
 
 const validarUsuario = async (correo = '') => {
@@ -28,7 +29,7 @@ const validarFecha = (fecha) => {
     }
 }
 const validarId = async(id) => {
-    const idExiste = await Evento.findById(id)
+    const idExiste = await Nota.findById(id)
     if(!idExiste){
         throw new Error(`El id ${id} no existe en la BD`)
     }
